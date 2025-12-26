@@ -677,4 +677,12 @@ body {
     #header .wrap .util .gnb_m ul li a {
         font-size: 45px;
     }
+    .visual .object .right {
+        width: 180px;
+        right: -58px;
+        top: 125px;
+    }
+    #header .wrap .util .gnb_m .close img {
+        width: 20px;
+    }
 }
