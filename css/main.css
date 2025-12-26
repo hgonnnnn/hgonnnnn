@@ -674,4 +674,7 @@ body {
     footer ul li {
         font-size: 15px;
     }
+    #header .wrap .util .gnb_m ul li a {
+        font-size: 45px;
+    }
 }
