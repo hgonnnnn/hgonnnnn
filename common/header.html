@@ -1,0 +1,57 @@
+<header>
+    <div class="wrap">
+        <h1><a href="/">hgonnnnn</a></h1>
+        <nav class="pc_nav pc">
+            <ul class="gnb">
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#">PROJECT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav><!-- .pc_nav end -->
+        <div class="util">
+            <button><img src="/img/btn.png" alt="menu"></button>
+            <div class="gnb_m">
+                <ul>
+                    <li><a href="#">ABOUT ME</a></li>
+                    <li><a href="#">PROJECT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+                <button class="close"><img src="img/close.png" alt="close"></button>
+            </div>
+        </div><!-- .util end -->
+    </div><!-- .wrap end -->
+</header>
+<script>
+    $(function () {
+        let scrollTop = 0;
+
+        $('.util button').click(function () {
+            scrollTop = $(window).scrollTop();
+            $('body')
+                .addClass('scroll_lock')
+                .css('top', -scrollTop + 'px');
+            $('.gnb_m')
+                .addClass('on')
+                .css({ 'opacity': '1', 'transition': '0.3s, else'});
+        });
+
+        $('.gnb_m .close').click(function () {
+            $(window).scrollTop(0);
+            $('body').removeClass('scroll_lock').css('top', '');
+            $('.gnb_m')
+                .removeClass('on')
+                .css({ 'opacity': '0', 'transition': '0.3s, else'});
+        });
+
+        $('.gnb_m ul li').hover(function(){
+            $('.gnb_m ul li').removeClass('on');
+            $('.gnb_m ul li').addClass('blur');
+            $('.gnb_m ul li').eq($(this).index()).addClass("on");
+            $('.gnb_m ul li').eq($(this).index()).removeClass("blur");
+        });
+        $('.gnb_m ul li').mouseleave(function(){
+            $('.gnb_m ul li').removeClass('on, blur');
+            $('.gnb_m ul li').eq($(this).index()).removeClass('on blur');
+        });
+    });
+</script>

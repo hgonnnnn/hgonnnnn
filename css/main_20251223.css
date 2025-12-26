@@ -1,0 +1,314 @@
+@charset "UTF-8";
+@import url("reset.css");
+@import url("header.css");
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Black.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../font/Roboto-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SUIT";
+    src: url("../font/SUIT-SemiBold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body,
+header {
+    font-family: "Pretendard";
+}
+.visual {
+    height: 100vh;
+    position: relative;
+}
+.visual .object {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.visual .object img {
+    filter: drop-shadow(2px 8px 10px #999);
+}
+.visual .object .left {
+    position: absolute;
+    top: 0;
+    left: -690px;
+}
+.visual .object .center {
+    position: absolute;
+    bottom: -40%;
+    right: 50%;
+    transform: translateX(50%);
+}
+.visual .object .right {
+    position: absolute;
+    top: 12%;
+    right: 70px;
+}
+.visual .txt_wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+.visual .txt_wrap span {
+    font-size: 20px;
+    font-weight: 400;
+    color: #444;
+}
+.visual .txt_wrap p {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #333;
+}
+.typing-sub span {
+  opacity: 0;
+  display: inline-block;
+
+}
+.typing-sub span.show {
+  opacity: 1;
+   font-size: 72px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #333;
+}
+.typing-sub::after {
+  content: "|";
+  margin-left: 6px;
+  opacity: 0;
+  font-weight: 400;
+}
+
+/* 타이핑 완료 후 커서 표시 */
+.typing-sub.cursor-on::after {
+  opacity: 1;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+.visual .scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
+}
+.visual .scroll p {
+    font-size: 18px;
+    color: #999;
+    position: relative;
+}
+.visual .scroll p::before {
+    content: "";
+    position: absolute;
+    bottom: -95px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 75px;
+    background: linear-gradient(#999, #fff);
+}
+.section {
+    margin: 120px 0;
+}
+.section .more {
+    font-family: "SUIT";
+    font-size: 18px;
+    padding: 11px 30px;
+    border-radius: 40px;
+    color: #da291c;
+    border: 1px solid #da291c;
+    transition: 0.3s;
+}
+.section .more:hover {
+    background: #da291c;
+    color: #fff;
+}
+.sec01 .tit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.sec01 .tit strong {
+    font-size: 72px;
+    font-weight: 600;
+    display: inline-block;
+}
+.sec01 .tit p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 35px 0 25px 0;
+}
+.swiperSec01 {
+    width: 100%;
+    margin-top: 80px;
+}
+.swiperSec01 .swiper-wrapper {
+    transition-timing-function: linear;
+    justify-content: center;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide:hover a img {
+    scale: 1.1;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide a {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ffffff17, #00000079);
+    z-index: 1;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide a .txt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 5px;
+    z-index: 2;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide a .txt span {
+    color: #fafafa;
+    font-size: 18px;
+    font-weight: 400;
+}
+.swiperSec01 .swiper-wrapper .swiper-slide a .txt p {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sec02 {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* bg01 = 배경 */
+.bg01 {
+    position: absolute;
+    inset: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 250px;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    will-change: transform;
+}
+
+/* 중앙 텍스트 */
+.big_txt,
+.scroll_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    line-height: 1.4;
+}
+
+.big_txt {
+    z-index: 3;
+}
+
+.big_txt span {
+    font-size: 72px;
+    font-weight: 600;
+}
+
+/* scroll_box */
+.scroll_box {
+    z-index: 4;
+}
+
+.scroll_box p,
+.scroll_box span {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.scroll_box p {
+    font-size: 82px;
+    color: #da291c;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+.scroll_box span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fafafa;
+    letter-spacing: 1px;
+}
