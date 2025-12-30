@@ -301,9 +301,6 @@ body {
     transform-origin: center center;
     will-change: width, height, filter;
 }
-.sec02 .img_wrap .bg01.mob {
-    display: none;
-}
 @keyframes floatY {
     0% {
         transform: translateY(0) scale(1);
@@ -602,12 +599,6 @@ body {
     }
 }
 @media all and (max-width: 650px) {
-    .sec02 .img_wrap .bg01.mob {
-        display: block;
-    }
-    .sec02 .img_wrap .bg01.pc {
-        display: none;
-    }
     .visual .object .center {
         width: 600px;
     }
