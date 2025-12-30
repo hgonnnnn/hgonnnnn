@@ -38,61 +38,84 @@ $(function () {
     });
 
     /* 텍스트 타이핑 효과 */
-    const el = document.querySelector('.typing-sub');
-    const originalHTML = el.innerHTML.trim();
+const el = document.querySelector('.typing-sub');
 
-    let items = [];
-    let index = 0;
+/* PC / 모바일 텍스트 분리 */
+const textPC = `보는 순간 느껴지고, <br>쓰는 순간 이해되는 디자인.`;
+const textMO = `보는 순간 느껴지고, <br>쓰는 순간 이해되는 <br>디자인.`;
 
-    const typingSpeed = 70;
-    const startDelay = 700;
+let items = [];
+let index = 0;
 
-    function setup() {
-        el.innerHTML = '';
-        items = [];
-        index = 0;
+let typingSpeed = 70;
+const startDelay = 700;
 
-        originalHTML.split(/(<br\s*\/?>)/gi).forEach(part => {
-            if (part.match(/<br/i)) {
-                const br = document.createElement('br');
-                br.style.display = 'none';
-                el.appendChild(br);
-                items.push(br);
-            } else {
-                [...part].forEach(char => {
-                    const span = document.createElement('span');
-                    span.textContent = char === ' ' ? '\u00A0' : char;
-                    el.appendChild(span);
-                    items.push(span);
-                });
-            }
-        });
-    }
+/* 반응형 텍스트 선택 */
+function getTypingText() {
+    return window.innerWidth <= 400 ? textMO : textPC;
+}
 
-    function typeOnce() {
-        if (index < items.length) {
-            const item = items[index];
+function setup() {
+    el.innerHTML = '';
+    items = [];
+    index = 0;
 
-            if (item.tagName === 'BR') {
-                item.style.display = 'block';
-                index++;
-                typeOnce(); // 줄바꿈은 딜레이 없이
-            } else {
-                item.classList.add('show');
-                index++;
-                setTimeout(typeOnce, typingSpeed);
-            }
+    /* 모바일에서는 살짝 빠르게 */
+    typingSpeed = window.innerWidth <= 400 ? 55 : 70;
+
+    const originalHTML = getTypingText();
+
+    originalHTML.split(/(<br\s*\/?>)/gi).forEach(part => {
+        if (part.match(/<br/i)) {
+            const br = document.createElement('br');
+            br.style.display = 'none';
+            el.appendChild(br);
+            items.push(br);
         } else {
-            // 타이핑 종료 → 커서 표시
-            el.classList.add('cursor-on');
+            [...part].forEach(char => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                el.appendChild(span);
+                items.push(span);
+            });
         }
+    });
+}
+
+function typeOnce() {
+    if (index < items.length) {
+        const item = items[index];
+
+        if (item.tagName === 'BR') {
+            item.style.display = 'block';
+            index++;
+            typeOnce(); // 줄바꿈은 딜레이 없이
+        } else {
+            item.classList.add('show');
+            index++;
+            setTimeout(typeOnce, typingSpeed);
+        }
+    } else {
+        // 타이핑 종료 → 커서 표시
+        el.classList.add('cursor-on');
     }
-    // 초기 세팅
-    setup();
-    // 1초 딜레이 후 타이핑 시작
-    setTimeout(() => {
-        typeOnce();
-    }, startDelay);
+}
+
+/* 초기 실행 */
+setup();
+setTimeout(typeOnce, startDelay);
+
+/* 리사이즈 대응 (PC ↔ 모바일 전환 시 재실행) */
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        el.classList.remove('cursor-on');
+        setup();
+        setTimeout(typeOnce, startDelay);
+    }, 300);
+});
+
 
     /* gsap 스크롤 이벤트 */
     gsap.registerPlugin(ScrollTrigger);

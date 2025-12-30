@@ -107,6 +107,7 @@ body {
     font-weight: 700;
     line-height: 1.4;
     color: #333;
+    padding: 0 30px;
 }
 .typing-sub span {
     opacity: 0;
@@ -299,6 +300,9 @@ body {
     filter: blur(2px);
     transform-origin: center center;
     will-change: width, height, filter;
+}
+.sec02 .img_wrap .bg01.mob {
+    display: none;
 }
 @keyframes floatY {
     0% {
@@ -551,16 +555,21 @@ body {
         font-size: 16px;
         padding: 9px 25px;
     }
+    .visual {
+        pointer-events: none;
+    }
     .visual .object .right {
         width: 250px;
         scale: 1;
         top: 30px;
+        animation: floatY var(--dur, 8s) ease-in-out var(--delay, 0s) infinite alternate;
     }
     .visual .object .left {
         width: 510px;
         scale: 1;
         top: 0;
         left: -350px;
+        animation: floatY var(--dur, 8s) ease-in-out var(--delay, 0s) infinite alternate;
     }
     #header .wrap .util .gnb_m ul li a {
         font-size: 65px;
@@ -593,13 +602,20 @@ body {
     }
 }
 @media all and (max-width: 650px) {
+    .sec02 .img_wrap .bg01.mob {
+        display: block;
+    }
+    .sec02 .img_wrap .bg01.pc {
+        display: none;
+    }
     .visual .object .center {
         width: 600px;
     }
     .visual .object .left {
         width: 465px;
     }
-    .visual .txt_wrap p, .typing-sub span.show {
+    .visual .txt_wrap p,
+    .typing-sub span.show {
         font-size: 42px;
     }
     .visual .txt_wrap > span {
@@ -649,7 +665,8 @@ body {
         width: 310px;
         left: -200px;
     }
-    .visual .txt_wrap p, .typing-sub span.show {
+    .visual .txt_wrap p,
+    .typing-sub span.show {
         font-size: 30px;
     }
     .sec02 .scroll_box p {
@@ -667,10 +684,25 @@ body {
     }
 }
 @media all and (max-width: 400px) {
+    #header .wrap {
+        margin: 20px auto;
+    }
+    #header .wrap h1 {
+        font-size: 24px;
+    }
+    #header .wrap .util button img {
+        width: 35px;
+    }
+    .visual .txt_wrap p,
+    .typing-sub span.show {
+        font-size: 32px;
+    }
     footer .wrap {
         padding: 25px 20px;
     }
-    footer a {font-size: 32px;}
+    footer a {
+        font-size: 32px;
+    }
     footer ul li {
         font-size: 15px;
     }
