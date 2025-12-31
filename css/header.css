@@ -4,7 +4,9 @@
 body.scroll_lock {
     overflow: hidden;
 }
-
+header {
+    font-family: "Pretendard";
+}
 #header {
     width: 100%;
     position: fixed;
@@ -132,20 +134,58 @@ body.scroll_lock {
     right: 35px;
 }
 #header .wrap .util .gnb_m.on .close {
-    animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s both;
+    animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
 }
 #header .wrap .util .gnb_m .close img {
     width: 32px;
 }
 @keyframes scale-in-ver-center {
-  0% {
-    -webkit-transform: scaleY(0);
-            transform: scaleY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scaleY(1);
-            transform: scaleY(1);
-    opacity: 1;
-  }
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* header 반응형 20251231 */
+@media all and (max-width: 1200px) {
+    #header .wrap .pc_nav .gnb li a {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+@media all and (max-width: 1024px) {
+    #header .wrap .pc_nav .gnb {
+        display: none;
+    }
+    #header .wrap .util .gnb_m ul li a {
+        font-size: 80px;
+    }
+}
+@media all and (max-width: 960px) {
+    #header .wrap .util .gnb_m ul li a {
+        font-size: 65px;
+    }
+}
+@media all and (max-width: 400px) {
+    #header .wrap .util .gnb_m ul li a {
+        font-size: 45px;
+    }
+    #header .wrap .util .gnb_m .close img {
+        width: 20px;
+    }
+    #header .wrap {
+        margin: 20px auto;
+    }
+    #header .wrap h1 {
+        font-size: 24px;
+    }
+    #header .wrap .util button img {
+        width: 35px;
+    }
 }

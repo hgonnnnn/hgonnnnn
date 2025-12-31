@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import url("reset.css");
 
-footer {}
+footer {font-family: "Pretendard";}
 footer .wrap {
     background: #333;
     width: calc(100% - 60px);
@@ -30,4 +30,21 @@ footer ul li {
 }
 footer p {
     color: #ccc;
+}
+/* footer 반응형 20251231 */
+@media all and (max-width: 960px) {
+        footer .wrap {
+        padding: 25px 40px;
+    }
+}
+@media all and (max-width: 400px) {
+        footer .wrap {
+        padding: 25px 20px;
+    }
+    footer a {
+        font-size: 32px;
+    }
+    footer ul li {
+        font-size: 15px;
+    }
 }

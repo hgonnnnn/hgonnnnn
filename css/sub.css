@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import url("reset.css");
+@import url("header.css");
+@import url("footer.css");
+
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard";
+    src: url("../font/Pretendard-Black.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../font/Roboto-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SUIT";
+    src: url("../font/SUIT-SemiBold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+/* About Me */
+.wrap01 {width: calc(100% - 60px); max-width: 1400px; margin: 0 auto;}
+#aboutMe {}
+#aboutMe #header .wrap .pc_nav .gnb li:nth-child(1) {
+    color: #da291c;
+}
+#aboutMe #header .wrap .pc_nav .gnb li:nth-child(1) a:before {
+    opacity: 1;
+}
+#aboutMe .sec01 {margin: 120px 0; display: flex; flex-wrap: wrap;}
+#aboutMe .sec01 .wrap01 {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;}
+#aboutMe .sec01 .left {width: calc(100%/4); border-radius: 20px; overflow: hidden; position: sticky; top: 120px}
+#aboutMe .sec01 .left img {width: 100%; height: 100%; object-fit: cover;}
+#aboutMe .sec01 .right {width: calc(100%/1.5); display: flex; flex-direction: column; row-gap: 100px;}
+#aboutMe .sec01 .right > div {}
+#aboutMe .sec01 .right > div p.tit {font-size: 22px; font-weight: 600; color: #333; margin-bottom: 35px;}
+#aboutMe .sec01 .right > div ul {display: flex; flex-direction: column; row-gap: 60px;}
+#aboutMe .sec01 .right > div ul li {display: flex; column-gap: 120px; }
+#aboutMe .sec01 .right > div.item01 ul {display: flex; flex-direction: unset; flex-wrap: wrap; row-gap: 60px;}
+#aboutMe .sec01 .right > div.item01 ul li {width: calc(100%/2);}
+#aboutMe .sec01 .right > div ul li strong {min-width: 110px; font-weight: 500; color: #666;}
+#aboutMe .sec01 .right > div ul li p, #aboutMe .sec01 .right > div ul li p a {font-weight: 600; color: #444; display: flex; flex-direction: column; row-gap: 12px;}
+#aboutMe .sec01 .right > div ul li span {font-weight: 500; color: #999; font-size: 15px;}
+#aboutMe .sec01 .right > div .img_wrap {display: flex; flex-wrap: wrap; gap: 30px 40px;}
+#aboutMe .sec01 .right > div .img_wrap img {width: 40px; height: auto; aspect-ratio: 1/1; object-fit: contain;}
+#aboutMe .sec01 .right > div .img_wrap img.skill_logo {width: 65px;}
+
+/* 반응형 20251231 */
+@media all and (max-width: 1400px) {
+    #aboutMe .sec01 .right > div.item01 ul li {width: 100%;}
+}
+@media all and (max-width: 780px) {
+    #aboutMe .sec01 {margin: 90px 0;}
+    #aboutMe .sec01 .wrap01 {flex-direction: column; row-gap: 45px;}
+    #aboutMe .sec01 .left {width: calc(100%/2); margin: 0 auto; position: unset;}
+    #aboutMe .sec01 .right {width: 100%; row-gap: 80px;}
+}
+@media all and (max-width: 500px) {
+    #aboutMe .sec01 .right > div ul li {column-gap: 20px;}
+}
+@media all and (max-width: 400px) {
+    #aboutMe .sec01 .left {width: calc(100%/ 1.5);}
+    #aboutMe .sec01 .right > div ul li {
+        flex-direction: column;
+        row-gap: 15px;
+    }
+    #aboutMe .sec01 .right > div.item01 ul {
+        row-gap: 30px;
+    }
+    #aboutMe .sec01 .right > div .img_wrap {
+        justify-content: center;
+    }
+    #aboutMe .sec01 .right > div p.tit {
+        font-size: 20px;
+    }
+    #aboutMe .sec01 .right > div ul li p, #aboutMe .sec01 .right > div ul li p a {
+        row-gap: 7px;
+    }
+}
