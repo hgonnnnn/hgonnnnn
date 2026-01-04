@@ -45,6 +45,13 @@
     font-weight: normal;
     font-style: normal;
 }
+/* 서브 공통 20260104 */
+.sub_visual {width: calc(100% - 60px); height: 340px; margin: 0 auto; margin-top: 100px; position: relative; border-radius: 20px; background: url(../img/sub_bg01.jpg) center no-repeat fixed; display: flex; align-items: center; justify-content: center;}
+.sub_visual::before {content: ''; position: absolute; bottom: -53px; left: 50%; transform: translateX(-50%); width: 2px; height: 105px; background: linear-gradient(#fff 50%, #000 50%);}
+.sub_visual .wrap {display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; letter-spacing: 1px;}
+.sub_visual .wrap p {font-size: 20px; font-weight: 400;}
+.sub_visual .wrap h2 {font-size: 52px; font-weight: 600; margin-top: 15px;}
+
 /* About Me */
 .wrap01 {width: calc(100% - 60px); max-width: 1400px; margin: 0 auto;}
 #aboutMe {}
@@ -76,16 +83,47 @@
 @media all and (max-width: 1400px) {
     #aboutMe .sec01 .right > div.item01 ul li {width: 100%;}
 }
+@media all and (max-width: 960px) {
+    .sub_visual {
+        height: 180px;
+    }
+    .sub_visual::before {
+        display: none;
+    }
+    .sub_visual .wrap p {
+        font-size: 18px;
+    }
+    .sub_visual .wrap h2 {
+        font-size: 46px;
+        margin-top: 10px;
+    }
+    #aboutMe .sec01 {
+        margin-top: 60px;
+    }
+}
 @media all and (max-width: 780px) {
-    #aboutMe .sec01 {margin: 90px 0;}
+    #aboutMe .sec01 {margin: 90px 0; margin-top: 60px;}
     #aboutMe .sec01 .wrap01 {flex-direction: column; row-gap: 45px;}
     #aboutMe .sec01 .left {width: calc(100%/2); margin: 0 auto; position: unset;}
     #aboutMe .sec01 .right {width: 100%; row-gap: 80px;}
 }
 @media all and (max-width: 500px) {
     #aboutMe .sec01 .right > div ul li {column-gap: 20px;}
+      .sub_visual {
+        height: 130px;
+        background-size: cover;
+    }
+    .sub_visual .wrap p {
+        font-size: 15px;
+    }
+    .sub_visual .wrap h2 {
+        font-size: 32px;
+    }
 }
 @media all and (max-width: 400px) {
+    #aboutMe .sec01 {
+        margin-top: 30px;
+    }
     #aboutMe .sec01 .left {width: calc(100%/ 1.5);}
     #aboutMe .sec01 .right > div ul li {
         flex-direction: column;
