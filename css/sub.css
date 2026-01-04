@@ -102,7 +102,7 @@
     }
 }
 @media all and (max-width: 780px) {
-    #aboutMe .sec01 {margin: 90px 0; margin-top: 60px;}
+    #aboutMe .sec01 {margin: 90px 0; margin-top: 40px;}
     #aboutMe .sec01 .wrap01 {flex-direction: column; row-gap: 45px;}
     #aboutMe .sec01 .left {width: calc(100%/2); margin: 0 auto; position: unset;}
     #aboutMe .sec01 .right {width: 100%; row-gap: 80px;}
@@ -121,6 +121,10 @@
     }
 }
 @media all and (max-width: 400px) {
+    .sub_visual {
+        height: 105px;
+        margin-top: 80px;
+    }
     #aboutMe .sec01 {
         margin-top: 30px;
     }
