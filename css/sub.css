@@ -45,39 +45,62 @@
     font-weight: normal;
     font-style: normal;
 }
+html,
+body,
+header {
+    font-family: "Pretendard";
+}
+
 /* 서브 공통 20260104 */
 .sub_visual {width: calc(100% - 60px); height: 340px; margin: 0 auto; margin-top: 100px; position: relative; border-radius: 20px; background: url(../img/sub_bg01.jpg) center no-repeat fixed; display: flex; align-items: center; justify-content: center;}
 .sub_visual::before {content: ''; position: absolute; bottom: -53px; left: 50%; transform: translateX(-50%); width: 2px; height: 105px; background: linear-gradient(#fff 50%, #000 50%);}
 .sub_visual .wrap {display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; letter-spacing: 1px;}
 .sub_visual .wrap p {font-size: 20px; font-weight: 400;}
-.sub_visual .wrap h2 {font-size: 52px; font-weight: 600; margin-top: 15px;}
+.sub_visual .wrap h2 {font-size: 56px; font-weight: 600; margin-top: 15px;}
 
-/* About Me */
-.wrap01 {width: calc(100% - 60px); max-width: 1400px; margin: 0 auto;}
-#aboutMe {}
+/* 헤더 body class명 css 추가 */
 #aboutMe #header .wrap .pc_nav .gnb li:nth-child(1) {
     color: #da291c;
 }
 #aboutMe #header .wrap .pc_nav .gnb li:nth-child(1) a:before {
     opacity: 1;
 }
-#aboutMe .sec01 {margin: 120px 0; display: flex; flex-wrap: wrap;}
+#project #header .wrap .pc_nav .gnb li:nth-child(2) {
+    color: #da291c;
+}
+#project #header .wrap .pc_nav .gnb li:nth-child(2) a:before {
+    opacity: 1;
+}
+
+/* About Me */
+.wrap01 {width: calc(100% - 60px); max-width: 1400px; margin: 0 auto;}
+#aboutMe {}
+.sec01 {margin: 120px 0; display: flex; flex-wrap: wrap;}
 #aboutMe .sec01 .wrap01 {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;}
 #aboutMe .sec01 .left {width: calc(100%/4); border-radius: 20px; overflow: hidden; position: sticky; top: 120px}
 #aboutMe .sec01 .left img {width: 100%; height: 100%; object-fit: cover;}
 #aboutMe .sec01 .right {width: calc(100%/1.5); display: flex; flex-direction: column; row-gap: 100px;}
 #aboutMe .sec01 .right > div {}
-#aboutMe .sec01 .right > div p.tit {font-size: 22px; font-weight: 600; color: #333; margin-bottom: 35px;}
+#aboutMe .sec01 .right > div p.tit {font-size: 22px; font-weight: 700; color: #333; margin-bottom: 35px;}
 #aboutMe .sec01 .right > div ul {display: flex; flex-direction: column; row-gap: 60px;}
 #aboutMe .sec01 .right > div ul li {display: flex; column-gap: 120px; }
 #aboutMe .sec01 .right > div.item01 ul {display: flex; flex-direction: unset; flex-wrap: wrap; row-gap: 60px;}
 #aboutMe .sec01 .right > div.item01 ul li {width: calc(100%/2);}
 #aboutMe .sec01 .right > div ul li strong {min-width: 110px; font-weight: 500; color: #666;}
-#aboutMe .sec01 .right > div ul li p, #aboutMe .sec01 .right > div ul li p a {font-weight: 600; color: #444; display: flex; flex-direction: column; row-gap: 12px;}
+#aboutMe .sec01 .right > div ul li p, #aboutMe .sec01 .right > div ul li p a {font-weight: 700; color: #333; display: flex; flex-direction: column; row-gap: 12px;}
 #aboutMe .sec01 .right > div ul li span {font-weight: 500; color: #999; font-size: 15px;}
 #aboutMe .sec01 .right > div .img_wrap {display: flex; flex-wrap: wrap; gap: 30px 40px;}
 #aboutMe .sec01 .right > div .img_wrap img {width: 40px; height: auto; aspect-ratio: 1/1; object-fit: contain;}
 #aboutMe .sec01 .right > div .img_wrap img.skill_logo {width: 65px;}
+
+/* PORTFOLIO */
+#project {}
+#project .sec01 {}
+#project .sec01 .btn_wrap {display: flex; column-gap: 30px; justify-content: center; margin-bottom: 40px;}
+#project .sec01 .btn_wrap li {cursor: pointer; letter-spacing: 1.3px; font-size: 18px; transition: 0.3s; font-weight: 500; padding: 9px 25px; border-radius: 40px; border: 1px solid #999; color: #999;}
+#project .sec01 .btn_wrap li:hover {background: #999; color: #fafafa}
+#project .sec01 .btn_wrap li.on {font-weight: 600; background: #da291c; color: #fafafa; border: 1px solid #da291c;}
+#project .sec01 .pro_wrap {}
 
 /* 반응형 20251231 */
 @media all and (max-width: 1400px) {
@@ -97,12 +120,12 @@
         font-size: 46px;
         margin-top: 10px;
     }
-    #aboutMe .sec01 {
+    .sec01 {
         margin-top: 60px;
     }
 }
 @media all and (max-width: 780px) {
-    #aboutMe .sec01 {margin: 90px 0; margin-top: 40px;}
+    .sec01 {margin: 90px 0; margin-top: 40px;}
     #aboutMe .sec01 .wrap01 {flex-direction: column; row-gap: 45px;}
     #aboutMe .sec01 .left {width: calc(100%/2); margin: 0 auto; position: unset;}
     #aboutMe .sec01 .right {width: 100%; row-gap: 80px;}
@@ -123,9 +146,9 @@
 @media all and (max-width: 400px) {
     .sub_visual {
         height: 105px;
-        margin-top: 80px;
+        margin-top: 75px;
     }
-    #aboutMe .sec01 {
+    .sec01 {
         margin-top: 30px;
     }
     #aboutMe .sec01 .left {width: calc(100%/ 1.5);}
