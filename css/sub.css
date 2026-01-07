@@ -127,10 +127,10 @@ header {
 #aboutMe #header .wrap .pc_nav .gnb li:nth-child(1) a:before {
     opacity: 1;
 }
-#project #header .wrap .pc_nav .gnb li:nth-child(2) {
+#project #header .wrap .pc_nav .gnb li:nth-child(2), #Overview01 #header .wrap .pc_nav .gnb li:nth-child(2){
     color: #da291c;
 }
-#project #header .wrap .pc_nav .gnb li:nth-child(2) a:before {
+#project #header .wrap .pc_nav .gnb li:nth-child(2) a:before, #Overview01 #header .wrap .pc_nav .gnb li:nth-child(2) a:before{
     opacity: 1;
 }
 
