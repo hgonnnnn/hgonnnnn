@@ -76,6 +76,14 @@ header {
     background: url(../img/over03.jpg) center no-repeat fixed;
     background-size: cover;
 }
+.sub_visual.over04 {
+    background: url(../img/over04.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+.sub_visual.over05 {
+    background: url(../img/over05.jpg) center no-repeat fixed;
+    background-size: cover;
+}
 .sub_visual::before {
     content: "";
     position: absolute;
