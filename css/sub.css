@@ -163,6 +163,7 @@ header {
 #aboutMe .sec01 .right > div ul li {
     display: flex;
     column-gap: 120px;
+    font-size: 17px;
 }
 #aboutMe .sec01 .right > div.item01 ul {
     display: flex;
@@ -172,6 +173,7 @@ header {
 }
 #aboutMe .sec01 .right > div.item01 ul li {
     width: calc(100% / 2);
+    font-size: 17px;
 }
 #aboutMe .sec01 .right > div ul li strong {
     min-width: 110px;
