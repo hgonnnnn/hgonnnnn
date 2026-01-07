@@ -322,6 +322,8 @@ header {
     display: flex;
     flex-direction: column;
     margin-bottom: 60px;
+    align-items: center;
+    text-align: center;
 }
 .overview .tit span {
     font-size: 16px;
@@ -339,7 +341,7 @@ header {
 }
 .overview .more_wrap {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     column-gap: 15px;
