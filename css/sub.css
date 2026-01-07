@@ -224,16 +224,16 @@ header {
     cursor: pointer;
     letter-spacing: 1.1px;
     font-size: 18px;
-    transition: 0.3s;
     font-weight: 500;
     padding: 8px 25px;
     border-radius: 40px;
-    border: 1px solid #bbb;
-    color: #bbb;
+    color: #fafafa;
+    transition: 0.3s;
+    background-size: 200% auto;
+    background-image: linear-gradient(to right, #999 0%, #ccc 50%, #999 100%);
 }
 #project .sec01 .btn_wrap li:hover {
-    background: #bbb;
-    color: #fff;
+    background-position: right center;
 }
 #project .sec01 .btn_wrap li.on {
     font-weight: 600;
