@@ -84,6 +84,10 @@ header {
     background: url(../img/over05.jpg) center no-repeat fixed;
     background-size: cover;
 }
+.sub_visual.over06 {
+    background: url(../img/over06.jpg) center no-repeat fixed;
+    background-size: cover;
+}
 .sub_visual::before {
     content: "";
     position: absolute;
@@ -341,7 +345,7 @@ header {
 .overview .tit strong {
     font-size: 38px;
     font-weight: 700;
-    margin: 5px 0 8px;
+    margin: 5px 0 15px;
     display: inline-block;
 }
 .overview .tit p {
@@ -387,7 +391,8 @@ header {
     justify-content: center;
     position: relative;
 }
-.overview .info .img_wrap img {
+.overview .info .img_wrap img.wid_none {
+    width: 650px;
 }
 .overview .info .img_wrap img.mob {
     width: 200px;
@@ -488,7 +493,7 @@ a.prev {
         top: 20px;
         right: 20px;
     }
-    .overview .info .img_wrap img {
+    .overview .info .img_wrap img, .overview .info .img_wrap img.wid_none {
         width: 75%;
     }
     .overview .info .img_wrap img.mob {
@@ -654,6 +659,9 @@ a.prev {
     }
     #project .sec01 .btn_wrap li {
         font-size: 16px;
+    }
+    .overview .tit strong {
+        margin-bottom: 20px;
     }
 }
 @media all and (max-width: 350px) {
