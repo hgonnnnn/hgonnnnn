@@ -68,6 +68,14 @@ header {
     background: url(../img/over01.jpg) center no-repeat fixed;
     background-size: cover;
 }
+.sub_visual.over02 {
+    background: url(../img/over02.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+.sub_visual.over03 {
+    background: url(../img/over03.jpg) center no-repeat fixed;
+    background-size: cover;
+}
 .sub_visual::before {
     content: "";
     position: absolute;
@@ -578,8 +586,17 @@ a.prev {
     .overview .more_wrap {
         justify-content: center;
     }
+    .overview .more_wrap.one a {
+        width: 100%;
+        min-width: unset;
+    }
     .overview .more_wrap.two a {
         width: calc(100% / 2 - 8px);
+        min-width: unset;
+    }
+    .overview .more_wrap.three a {
+        width: calc(100% / 3 - 10px);
+        font-size: 15px;
         min-width: unset;
     }
 }
