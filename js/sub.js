@@ -13,4 +13,9 @@ $(function(){
 
     /* aos */
     AOS.init();
+
+    /* fancybox */
+	Fancybox.bind("[data-fancybox]", {
+	});
+    
 });

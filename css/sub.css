@@ -52,11 +52,49 @@ header {
 }
 
 /* 서브 공통 20260104 */
-.sub_visual {width: calc(100% - 60px); height: 340px; margin: 0 auto; margin-top: 100px; position: relative; border-radius: 20px; background: url(../img/sub_bg01.jpg) center no-repeat fixed; display: flex; align-items: center; justify-content: center;}
-.sub_visual::before {content: ''; position: absolute; bottom: -53px; left: 50%; transform: translateX(-50%); width: 2px; height: 105px; background: linear-gradient(#fff 50%, #000 50%);}
-.sub_visual .wrap {display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; letter-spacing: 1px;}
-.sub_visual .wrap p {font-size: 20px; font-weight: 400;}
-.sub_visual .wrap h2 {font-size: 56px; font-weight: 600; margin-top: 15px;}
+.sub_visual {
+    width: calc(100% - 60px);
+    height: 340px;
+    margin: 0 auto;
+    margin-top: 100px;
+    position: relative;
+    border-radius: 20px;
+    background: url(../img/sub_bg01.jpg) center no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sub_visual.over01 {
+    background: url(../img/over01.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+.sub_visual::before {
+    content: "";
+    position: absolute;
+    bottom: -53px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 105px;
+    background: linear-gradient(#fff 50%, #000 50%);
+}
+.sub_visual .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.sub_visual .wrap p {
+    font-size: 20px;
+    font-weight: 400;
+}
+.sub_visual .wrap h2 {
+    font-size: 56px;
+    font-weight: 600;
+    margin-top: 15px;
+}
 
 /* 헤더 body class명 css 추가 */
 #aboutMe #header .wrap .pc_nav .gnb li:nth-child(1) {
@@ -73,38 +111,332 @@ header {
 }
 
 /* About Me */
-.wrap01 {width: calc(100% - 60px); max-width: 1400px; margin: 0 auto;}
-#aboutMe {}
-.sec01 {margin: 120px 0; display: flex; flex-wrap: wrap;}
-#aboutMe .sec01 .wrap01 {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;}
-#aboutMe .sec01 .left {width: calc(100%/4); border-radius: 20px; overflow: hidden; position: sticky; top: 120px}
-#aboutMe .sec01 .left img {width: 100%; height: 100%; object-fit: cover;}
-#aboutMe .sec01 .right {width: calc(100%/1.5); display: flex; flex-direction: column; row-gap: 100px;}
-#aboutMe .sec01 .right > div {}
-#aboutMe .sec01 .right > div p.tit {font-size: 22px; font-weight: 700; color: #333; margin-bottom: 35px;}
-#aboutMe .sec01 .right > div ul {display: flex; flex-direction: column; row-gap: 60px;}
-#aboutMe .sec01 .right > div ul li {display: flex; column-gap: 120px; }
-#aboutMe .sec01 .right > div.item01 ul {display: flex; flex-direction: unset; flex-wrap: wrap; row-gap: 60px;}
-#aboutMe .sec01 .right > div.item01 ul li {width: calc(100%/2);}
-#aboutMe .sec01 .right > div ul li strong {min-width: 110px; font-weight: 500; color: #666;}
-#aboutMe .sec01 .right > div ul li p, #aboutMe .sec01 .right > div ul li p a {font-weight: 700; color: #333; display: flex; flex-direction: column; row-gap: 12px;}
-#aboutMe .sec01 .right > div ul li span {font-weight: 500; color: #999; font-size: 15px;}
-#aboutMe .sec01 .right > div .img_wrap {display: flex; flex-wrap: wrap; gap: 30px 40px;}
-#aboutMe .sec01 .right > div .img_wrap img {width: 40px; height: auto; aspect-ratio: 1/1; object-fit: contain;}
-#aboutMe .sec01 .right > div .img_wrap img.skill_logo {width: 65px;}
+.wrap01 {
+    width: calc(100% - 60px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+#aboutMe {
+}
+.sec01 {
+    margin: 120px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#aboutMe .sec01 .wrap01 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#aboutMe .sec01 .left {
+    width: calc(100% / 4);
+    border-radius: 20px;
+    overflow: hidden;
+    position: sticky;
+    top: 120px;
+}
+#aboutMe .sec01 .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#aboutMe .sec01 .right {
+    width: calc(100% / 1.5);
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+}
+#aboutMe .sec01 .right > div {
+}
+#aboutMe .sec01 .right > div p.tit {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 35px;
+}
+#aboutMe .sec01 .right > div ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+#aboutMe .sec01 .right > div ul li {
+    display: flex;
+    column-gap: 120px;
+}
+#aboutMe .sec01 .right > div.item01 ul {
+    display: flex;
+    flex-direction: unset;
+    flex-wrap: wrap;
+    row-gap: 60px;
+}
+#aboutMe .sec01 .right > div.item01 ul li {
+    width: calc(100% / 2);
+}
+#aboutMe .sec01 .right > div ul li strong {
+    min-width: 110px;
+    font-weight: 500;
+    color: #666;
+}
+#aboutMe .sec01 .right > div ul li p,
+#aboutMe .sec01 .right > div ul li p a {
+    font-weight: 700;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+#aboutMe .sec01 .right > div ul li span {
+    font-weight: 500;
+    color: #999;
+    font-size: 15px;
+}
+#aboutMe .sec01 .right > div .img_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+}
+#aboutMe .sec01 .right > div .img_wrap img {
+    width: 40px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+#aboutMe .sec01 .right > div .img_wrap img.skill_logo {
+    width: 65px;
+}
 
 /* PORTFOLIO */
-#project {}
-#project .sec01 {}
-#project .sec01 .btn_wrap {display: flex; column-gap: 30px; justify-content: center; margin-bottom: 40px;}
-#project .sec01 .btn_wrap li {cursor: pointer; letter-spacing: 1.3px; font-size: 18px; transition: 0.3s; font-weight: 500; padding: 9px 25px; border-radius: 40px; border: 1px solid #999; color: #999;}
-#project .sec01 .btn_wrap li:hover {background: #999; color: #fafafa}
-#project .sec01 .btn_wrap li.on {font-weight: 600; background: #da291c; color: #fafafa; border: 1px solid #da291c;}
-#project .sec01 .pro_wrap {}
+#project {
+}
+#project .sec01 {
+}
+#project .sec01 .btn_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+#project .sec01 .btn_wrap li {
+    cursor: pointer;
+    letter-spacing: 1.1px;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: 500;
+    padding: 8px 25px;
+    border-radius: 40px;
+    border: 1px solid #bbb;
+    color: #bbb;
+}
+#project .sec01 .btn_wrap li:hover {
+    background: #bbb;
+    color: #fff;
+}
+#project .sec01 .btn_wrap li.on {
+    font-weight: 600;
+    background: #da291c;
+    color: #fafafa;
+    border: 1px solid #da291c;
+}
+#project .sec01 .pro_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+#project .sec01 .pro_wrap > div {
+    display: none;
+    aspect-ratio: 1/1.4;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.35s ease;
+}
+/* #project .sec01 .pro_wrap > div:nth-child(4n + 1) {
+    transform: translateY(0);
+}
+#project .sec01 .pro_wrap > div:nth-child(4n + 2) {
+    transform: translateY(30px);
+}
+#project .sec01 .pro_wrap > div:nth-child(4n + 3) {
+    transform: translateY(60px);
+}
+
+#project .sec01 .pro_wrap > div:nth-child(4n + 4) {
+    transform: translateY(90px);
+} */
+#project .sec01 .pro_wrap > div.on {
+    display: block;
+}
+#project .sec01 .pro_wrap > div a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#project .sec01 .pro_wrap > div a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#0000002e 80%, #000);
+    opacity: 0.5;
+}
+#project .sec01 .pro_wrap > div a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#project .sec01 .pro_wrap > div a img.icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+}
+#project .sec01 .pro_wrap > div a p {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* overview 공통 */
+.overview .tit {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+.overview .tit span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #da291c;
+}
+.overview .tit strong {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 5px 0 8px;
+    display: inline-block;
+}
+.overview .tit p {
+    font-size: 18px;
+}
+.overview .more_wrap {
+    width: 100%;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    margin-top: 30px;
+}
+.overview .more_wrap a {
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 40px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #fafafa;
+}
+.overview .more_wrap a:hover {
+    background-position: right center;
+}
+.overview .more_wrap a.over {
+    background-image: linear-gradient(to right, #a8a8a8 0%, #ccc 55%, #a8a8a8 100%);
+}
+.overview .more_wrap a.more {
+    background-image: linear-gradient(to right, #da291c 0%, #e94e11 55%, #da291c 100%);
+}
+.overview .info {
+}
+.overview .info .img_wrap {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    justify-content: center;
+    position: relative;
+}
+.overview .info .img_wrap img {
+}
+.overview .info .img_wrap img.mob {
+    width: 200px;
+    filter: drop-shadow(5px 8px 6px #0000002e);
+}
+.overview .txt {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.overview .txt .sub_tit {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding: 0;
+    border: unset;
+}
+.overview .txt li {
+    border-bottom: 1px solid #444;
+    display: flex;
+    column-gap: 165px;
+    width: 100%;
+    font-size: 17px;
+    padding: 15px;
+    align-items: center;
+}
+.overview .txt li:nth-child(2) {
+    border-top: 1px solid #444;
+}
+.overview .txt li strong {
+    min-width: 60px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #da291c;
+    font-weight: 500;
+}
+.overview .txt li p {
+    min-width: 250px;
+    font-weight: 600;
+    line-height: 1.4;
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+}
+.overview .txt li span {
+    color: #999;
+    font-weight: 500;
+}
+a.prev {
+    display: flex;
+    justify-content: center;
+    background-color: #a8a8a8;
+    color: #fff;
+    padding: 9px 5px;
+    width: 140px;
+    border-radius: 40px;
+    letter-spacing: 1.2px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-top: 40px;
+}
 
 /* 반응형 20251231 */
 @media all and (max-width: 1400px) {
-    #aboutMe .sec01 .right > div.item01 ul li {width: 100%;}
+    #aboutMe .sec01 .right > div.item01 ul li {
+        width: 100%;
+    }
 }
 @media all and (max-width: 960px) {
     .sub_visual {
@@ -123,16 +455,88 @@ header {
     .sec01 {
         margin-top: 60px;
     }
+    #project .sec01 .pro_wrap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #project .sec01 .pro_wrap > div a p {
+        font-size: 22px;
+        bottom: 20px;
+        left: 20px;
+    }
+    #project .sec01 .pro_wrap > div a img.icon {
+        width: 30px;
+        top: 20px;
+        right: 20px;
+    }
+    .overview .info .img_wrap img {
+        width: 75%;
+    }
+    .overview .info .img_wrap img.mob {
+        width: 22%;
+        position: absolute;
+        bottom: 50px;
+        right: 45px;
+    }
+    .overview .txt li p {
+        column-gap: 0;
+    }
+    .overview .txt li {
+        column-gap: 70px;
+    }
+    .overview .tit strong {
+        font-size: 32px;
+    }
+    .overview .tit p {
+        font-size: 16px;
+    }
 }
 @media all and (max-width: 780px) {
-    .sec01 {margin: 90px 0; margin-top: 40px;}
-    #aboutMe .sec01 .wrap01 {flex-direction: column; row-gap: 45px;}
-    #aboutMe .sec01 .left {width: calc(100%/2); margin: 0 auto; position: unset;}
-    #aboutMe .sec01 .right {width: 100%; row-gap: 80px;}
+    .sec01 {
+        margin: 90px 0;
+        margin-top: 40px;
+    }
+    #aboutMe .sec01 .wrap01 {
+        flex-direction: column;
+        row-gap: 45px;
+    }
+    #aboutMe .sec01 .left {
+        width: calc(100% / 2);
+        margin: 0 auto;
+        position: unset;
+    }
+    #aboutMe .sec01 .right {
+        width: 100%;
+        row-gap: 80px;
+    }
+}
+@media all and (max-width: 750px) {
+    #project .sec01 .btn_wrap li {
+        width: calc(100% / 3 - 20px);
+        text-align: center;
+        padding: 8px 5px;
+    }
+}
+@media all and (max-width: 650px) {
+    #project .sec01 .pro_wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .overview .txt li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .overview .txt li p,
+    .overview .txt li span {
+        font-size: 16px;
+    }
+    .overview .txt .sub_tit > p {
+        font-size: 32px;
+    }
 }
 @media all and (max-width: 500px) {
-    #aboutMe .sec01 .right > div ul li {column-gap: 20px;}
-      .sub_visual {
+    #aboutMe .sec01 .right > div ul li {
+        column-gap: 20px;
+    }
+    .sub_visual {
         height: 130px;
         background-size: cover;
     }
@@ -141,6 +545,40 @@ header {
     }
     .sub_visual .wrap h2 {
         font-size: 32px;
+    }
+    #project .sec01 .btn_wrap li.mobile,
+    #project .sec01 .btn_wrap li.design {
+        width: calc(100% / 2 - 20px);
+    }
+    .overview .tit strong,
+    .overview .txt .sub_tit > p {
+        font-size: 24px;
+    }
+    .overview .tit {
+        margin-bottom: 30px;
+    }
+    .overview .info .img_wrap img.mob {
+        bottom: 0;
+        right: 0;
+    }
+    .overview .more_wrap {
+        margin-top: 20px;
+    }
+    .overview .more_wrap a {
+        font-size: 16px;
+    }
+    .overview .txt li {
+        padding: 12px 5px;
+    }
+    .overview .txt {
+        margin-top: 40px;
+    }
+    .overview .more_wrap {
+        justify-content: center;
+    }
+    .overview .more_wrap.two a {
+        width: calc(100% / 2 - 8px);
+        min-width: unset;
     }
 }
 @media all and (max-width: 400px) {
@@ -151,7 +589,9 @@ header {
     .sec01 {
         margin-top: 30px;
     }
-    #aboutMe .sec01 .left {width: calc(100%/ 1.5);}
+    #aboutMe .sec01 .left {
+        width: calc(100% / 1.5);
+    }
     #aboutMe .sec01 .right > div ul li {
         flex-direction: column;
         row-gap: 15px;
@@ -165,7 +605,36 @@ header {
     #aboutMe .sec01 .right > div p.tit {
         font-size: 20px;
     }
-    #aboutMe .sec01 .right > div ul li p, #aboutMe .sec01 .right > div ul li p a {
+    #aboutMe .sec01 .right > div ul li p,
+    #aboutMe .sec01 .right > div ul li p a {
         row-gap: 7px;
+    }
+    #project .sec01 .btn_wrap {
+        gap: 16px 10px;
+    }
+    #project .sec01 .btn_wrap li {
+        width: calc(100% / 3 - 7px);
+    }
+    #project .sec01 .btn_wrap li.mobile,
+    #project .sec01 .btn_wrap li.design {
+        width: calc(100% / 2 - 7px);
+    }
+    #project .sec01 .pro_wrap > div a p {
+        font-size: 16px;
+        bottom: 15px;
+    }
+    #project .sec01 .btn_wrap li {
+        font-size: 16px;
+    }
+}
+@media all and (max-width: 350px) {
+    #project .sec01 .pro_wrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #project .sec01 .pro_wrap > div {
+        aspect-ratio: 1/1;
+    }
+    #project .sec01 .pro_wrap > div a p {
+        font-size: 18px;
     }
 }

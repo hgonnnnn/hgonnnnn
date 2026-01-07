@@ -34,32 +34,168 @@
     <div class="sec01">
         <div class="wrap01">
             <ul class="btn_wrap">
-                <li class="on">전체</li>
-                <li>반응형</li>
-                <li>PC</li>
-                <li>앱 & 모바일</li>
-                <li>디자인</li>
+                <li class="on all">전 체</li>
+                <li class="respon">반응형</li>
+                <li class="pc">PC</li>
+                <li class="mobile">앱 & 모바일</li>
+                <li class="design">디자인</li>
             </ul>
             <div class="pro_wrap">
-                <div class="item responsive">
-                    <img src="../img/project01.jpg" alt="Responsive">
-                    <p>낫싱</p>
+                <div class="item responsive on">
+                    <a href="/hgonnnnn/sub/view/nothing_view.html">
+                        <img src="../img/project01.jpg" alt="Responsive">
+                        <p>낫싱</p>
+                    </a>
                 </div><!-- .item end -->
-                <div class="item responsive">
-                    <img src="../img/project02.jpg" alt="Responsive">
-                    <p>케이스티파이</p>
+                <div class="item responsive on">
+                    <a href="#">
+                        <img src="../img/project02.jpg" alt="Responsive">
+                        <p>케이스티파이</p>
+                    </a>
                 </div><!-- .item end -->
-                <div class="item responsive">
-                    <img src="../img/project003.jpg" alt="Responsive">
-                    <p>디젤</p>
+                <div class="item responsive on">
+                    <a href="#">
+                        <img src="../img/project003.jpg" alt="Responsive">
+                        <p>디젤</p>
+                    </a>
                 </div><!-- .item end -->
-                <div class="item responsive">
-                    <img src="../img/project04.jpg" alt="Responsive">
-                    <p>GS 에너지</p>
+                <div class="item responsive on">
+                    <a href="#">
+                        <img src="../img/project04.jpg" alt="Responsive">
+                        <p>GS 에너지</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item pcPage on">
+                    <a href="#">
+                        <img src="../img/project005.jpg" alt="Responsive">
+                        <p>닌텐도</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item pcPage on">
+                    <a href="#">
+                        <img src="../img/project06.jpg" alt="Responsive">
+                        <p>레씨토</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item mobPage on">
+                    <a href="#">
+                        <img src="../img/app01.jpg" alt="app">
+                        <p>우체국</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item designPage on">
+                    <a href="../img/design001.jpg" data-fancybox>
+                        <img src="../img/design01.jpg" alt="design">
+                        <img src="../img/skill06.png" class="icon">
+                        <p>디자인</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item designPage on">
+                    <a href="../img/design002.jpg" data-fancybox>
+                        <img src="../img/design02.jpg" alt="design">
+                        <img src="../img/skill05.png" class="icon">
+                        <p>디자인</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item designPage on">
+                    <a href="../img/design003.jpg" data-fancybox>
+                        <img src="../img/design03.jpg" alt="design">
+                        <img src="../img/skill05.png" class="icon">
+                        <p>디자인</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item designPage on">
+                    <a href="../img/design004.jpg" data-fancybox>
+                        <img src="../img/design04.jpg" alt="design">
+                        <img src="../img/skill05.png" class="icon">
+                        <p>디자인</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item designPage on">
+                    <a href="../img/design005.jpg" data-fancybox>
+                        <img src="../img/design05.jpg" alt="design">
+                        <img src="../img/skill06.png" class="icon">
+                        <p>디자인</p>
+                    </a>
+                </div><!-- .item end -->
+                <div class="item designPage on">
+                    <a href="../img/design006.jpg" data-fancybox>
+                        <img src="../img/design06.jpg" alt="design">
+                        <img src="../img/skill05.png" class="icon">
+                        <p>디자인</p>
+                    </a>
                 </div><!-- .item end -->
             </div><!-- .pro_wrap end -->
         </div>
     </div><!-- .sec01 end -->
 </body>
+<script>
+    // 포트폴리오 item 반응형
+    function getGridColumns() {
+        const grid = document.querySelector('.pro_wrap');
+        const styles = window.getComputedStyle(grid);
+        return styles.gridTemplateColumns.split(' ').length;
+    }
+
+    function updateGridTransform() {
+        const items = document.querySelectorAll('.pro_wrap > div.on');
+        const columns = getGridColumns();
+        const step = 30;
+
+        items.forEach((item, index) => {
+            if (columns <= 2) {
+                item.style.transform = 'translateY(0)';
+            } else {
+                const colIndex = index % columns;
+                item.style.transform = `translateY(${colIndex * step}px)`;
+            }
+        });
+    }
+
+    // 로딩 완료 후 실행
+    window.addEventListener('load', () => {
+        requestAnimationFrame(updateGridTransform);
+    });
+
+    // 필터 클릭 후 실행
+    $('.btn_wrap li').on('click', function () {
+        updateGridTransform();
+    });
+
+    // 리사이즈 대응
+    window.addEventListener('resize', updateGridTransform);
+
+    // 버튼
+    $('.btn_wrap li').click(function () {
+        $('.btn_wrap li').removeClass("on");
+        $('.btn_wrap li').eq($(this).index()).addClass("on");
+        updateGridTransform();
+    });
+    $('.all').click(function () {
+        $('.pro_wrap > div').addClass('on');
+        updateGridTransform();
+    });
+    $('.respon').click(function () {
+        $('.pro_wrap > div').removeClass('on');
+        $('.pro_wrap > div.responsive').addClass('on');
+        updateGridTransform();
+    });
+    $('.pc').click(function () {
+        $('.pro_wrap > div').removeClass('on');
+        $('.pro_wrap > div.pcPage').addClass('on');
+        updateGridTransform();
+    });
+    $('.mobile').click(function () {
+        $('.pro_wrap > div').removeClass('on');
+        $('.pro_wrap > div.mobPage').addClass('on');
+        updateGridTransform();
+    });
+    $('.design').click(function () {
+        $('.pro_wrap > div').removeClass('on');
+        $('.pro_wrap > div.designPage').addClass('on');
+        updateGridTransform();
+    });
+    updateGridTransform();
+</script>
 
 </html>
