@@ -133,6 +133,12 @@ header {
 #project #header .wrap .pc_nav .gnb li:nth-child(2) a:before, #Overview01 #header .wrap .pc_nav .gnb li:nth-child(2) a:before{
     opacity: 1;
 }
+#contact #header .wrap .pc_nav .gnb li:nth-child(1) {
+    color: #da291c;
+}
+#contact #header .wrap .pc_nav .gnb li:nth-child(1) a:before {
+    opacity: 1;
+}
 
 /* About Me */
 .wrap01 {
