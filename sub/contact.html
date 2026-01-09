@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../lib/fancybox.css">
+    <link rel="stylesheet" href="../lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../lib/aos.css">
+    <link rel="stylesheet" href="../css/sub.css">
+
+    <script src="../lib/fancybox.umd.js"></script>
+    <script src="../lib/gsap.min.js"></script>
+    <script src="../lib/jquery-3.7.1.min.js"></script>
+    <script src="../lib/jquery-ui.min.js"></script>
+    <script src="../lib/lenis.min.js"></script>
+    <script src="../lib/ScrollTrigger.min.js"></script>
+    <script src="../lib/swiper-bundle.min.js"></script>
+    <script src="../lib/aos.js"></script>
+    <script src="../js/sub.js"></script>
+    <script src="/hgonnnnn/js/common.js"></script>
+</head>
+
+<body id="contact">
+    <header id="header"></header>
+    <div class="sub_visual">
+        <div class="wrap">
+            <p>CONTACT</p>
+            <h2>Contact With Me</h2>
+        </div>
+    </div>
+    <section class="sec01">
+        <div class="wrap01">
+            <div class="item_wrap">
+                <div class="item on">
+                    <span>Please contact me if you are interested</span>
+                    <p>심미성과 사용성을 동시에 잡는 디자인을 제안합니다.</p>
+                </div><!-- .item end -->
+                <div class="item">
+                    <a href="mailto:hgonnnnn5@gmail.com">
+                        <span>E-mail</span>
+                        <p>hgonnnnn@gmail.com</p>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <span>Resume</span>
+                        <p>이력서 바로가기</p>
+                    </a>
+                </div>
+            </div><!-- .item_wrap end -->
+        </div>
+    </section>
+    <footer id="footer"></footer>
+</body>
+<script>
+    $(function () {
+        const $items = $('#contact .item_wrap .item');
+        const $wrap = $('#contact .item_wrap');
+
+        // 기본 상태: 첫 번째 on
+        $items.removeClass('on');
+        $items.eq(0).addClass('on');
+
+        // item hover
+        $items.on('mouseenter', function () {
+            $items.removeClass('on');
+            $(this).addClass('on');
+        });
+
+        // wrap에서 마우스 나가면 첫 번째로 복귀
+        $wrap.on('mouseleave', function () {
+            $items.removeClass('on');
+            $items.eq(0).addClass('on');
+        });
+    });
+</script>
+
+</html>

@@ -461,6 +461,32 @@ a.prev {
     margin-top: 40px;
 }
 
+/* Contact */
+#contact .item_wrap {display: flex; flex-wrap: wrap; gap: 0 30px;}
+#contact .item_wrap > div {display: flex; height: 300px; text-align: center; flex-direction: column; align-items: center; justify-content: center; width: calc(100%/3 - 80px); flex: 1; padding: 30px 40px; border-radius: 20px; transition: flex 1s ease;}
+#contact .item_wrap > div span {font-size: 16px; font-weight: 500;}
+#contact .item_wrap > div p {font-size: 22px; font-weight: 700; margin-top: 15px;}
+#contact .item_wrap > div a {display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;}
+#contact .item_wrap > div a > span {font-size: 24px; font-weight: 600;}
+#contact .item_wrap > div a > p {font-size: 20px; font-weight: 600; height: 0; visibility: hidden; margin: 0;}
+#contact .item_wrap > div:nth-child(1) p {max-width: 370px;}
+#contact .item_wrap > div:nth-child(1) {background: url('../img/contact01.jpg') center no-repeat; cursor: default; background-size: cover;}
+#contact .item_wrap > div:nth-child(2) {background: url('../img/contact02.jpg') center no-repeat; background-size: cover;}
+#contact .item_wrap > div:nth-child(3) {background: url('../img/contact03.jpg') center no-repeat; background-size: cover;}
+#contact .item_wrap > div.on {flex: 2;}
+#contact .item_wrap > div.on a > p {height: auto; visibility: visible; animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both; margin-top: 10px; color: #444;}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
 /* 반응형 20251231 */
 @media all and (max-width: 1400px) {
     #aboutMe .sec01 .right > div.item01 ul li {
@@ -517,6 +543,45 @@ a.prev {
     }
     .overview .tit p {
         font-size: 16px;
+    }
+    #contact .item_wrap {
+        flex-direction: column;
+    }
+    #contact .item_wrap > div {
+        width: 100%;
+        flex: unset;
+        height: auto;
+    }
+    #contact .item_wrap > div.on {
+        flex: unset;
+    }
+    #contact .item_wrap > div:nth-child(1) {
+        background: unset;
+        padding: 0;
+        height: auto;
+        margin-bottom: 45px;
+    }
+    #contact .item_wrap > div:nth-child(1) span {
+        color: #da291c;
+    }
+    #contact .item_wrap > div:nth-child(1) p {
+        max-width: unset;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0;
+        margin-top: 5px;
+    }
+    #contact .item_wrap > div a > p {
+        height: auto;
+        visibility: visible;
+        margin-top: 10px;
+    }
+    #contact .item_wrap > div a > span {
+        font-size: 16px;
+        color: #da291c;
+    }
+    #contact .item_wrap > div:nth-child(2) {
+        margin-bottom: 30px;
     }
 }
 @media all and (max-width: 780px) {
@@ -618,6 +683,12 @@ a.prev {
         font-size: 15px;
         min-width: unset;
     }
+    #contact .item_wrap > div:nth-child(1) p {
+        font-size: 24px;
+    }
+    #contact .item_wrap > div a > p {
+        font-size: 18px;
+    }
 }
 @media all and (max-width: 400px) {
     .sub_visual {
@@ -666,6 +737,9 @@ a.prev {
     }
     .overview .tit strong {
         margin-bottom: 20px;
+    }
+    #contact .sub_visual .wrap h2 {
+        font-size: 28px;
     }
 }
 @media all and (max-width: 350px) {
