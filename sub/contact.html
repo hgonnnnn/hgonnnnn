@@ -33,11 +33,11 @@
     </div>
     <section class="sec01">
         <div class="wrap01">
+            <div class="tit">
+                <span>Please contact me if you are interested</span>
+                <p>심미성과 사용성을 동시에 잡는 디자인을 제안합니다.</p>
+            </div>
             <div class="item_wrap">
-                <div class="item on">
-                    <span>Please contact me if you are interested</span>
-                    <p>심미성과 사용성을 동시에 잡는 디자인을 제안합니다.</p>
-                </div><!-- .item end -->
                 <div class="item">
                     <a href="mailto:hgonnnnn5@gmail.com">
                         <span>E-mail</span>
@@ -55,27 +55,4 @@
     </section>
     <footer id="footer"></footer>
 </body>
-<script>
-    $(function () {
-        const $items = $('#contact .item_wrap .item');
-        const $wrap = $('#contact .item_wrap');
-
-        // 기본 상태: 첫 번째 on
-        $items.removeClass('on');
-        $items.eq(0).addClass('on');
-
-        // item hover
-        $items.on('mouseenter', function () {
-            $items.removeClass('on');
-            $(this).addClass('on');
-        });
-
-        // wrap에서 마우스 나가면 첫 번째로 복귀
-        $wrap.on('mouseleave', function () {
-            $items.removeClass('on');
-            $items.eq(0).addClass('on');
-        });
-    });
-</script>
-
 </html>

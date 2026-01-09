@@ -462,19 +462,27 @@ a.prev {
 }
 
 /* Contact */
+#contact .tit {display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 60px;}
+#contact .tit span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #da291c;
+}
+#contact .tit p {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 5px 0 15px;
+    display: inline-block;
+}
 #contact .item_wrap {display: flex; flex-wrap: wrap; gap: 0 30px;}
 #contact .item_wrap > div {display: flex; height: 300px; text-align: center; flex-direction: column; align-items: center; justify-content: center; width: calc(100%/3 - 80px); flex: 1; padding: 30px 40px; border-radius: 20px; transition: flex 1s ease;}
-#contact .item_wrap > div span {font-size: 16px; font-weight: 500;}
-#contact .item_wrap > div p {font-size: 22px; font-weight: 700; margin-top: 15px;}
 #contact .item_wrap > div a {display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;}
 #contact .item_wrap > div a > span {font-size: 24px; font-weight: 600;}
 #contact .item_wrap > div a > p {font-size: 20px; font-weight: 600; height: 0; visibility: hidden; margin: 0;}
-#contact .item_wrap > div:nth-child(1) p {max-width: 370px;}
-#contact .item_wrap > div:nth-child(1) {background: url('../img/contact01.jpg') center no-repeat; cursor: default; background-size: cover;}
-#contact .item_wrap > div:nth-child(2) {background: url('../img/contact02.jpg') center no-repeat; background-size: cover;}
-#contact .item_wrap > div:nth-child(3) {background: url('../img/contact03.jpg') center no-repeat; background-size: cover;}
-#contact .item_wrap > div.on {flex: 2;}
-#contact .item_wrap > div.on a > p {height: auto; visibility: visible; animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both; margin-top: 10px; color: #444;}
+#contact .item_wrap > div:nth-child(1) {background: url('../img/contact02.jpg') center no-repeat; background-size: cover;}
+#contact .item_wrap > div:nth-child(2) {background: url('../img/contact03.jpg') center no-repeat; background-size: cover;}
+#contact .item_wrap > div:hover {flex: 1.5;}
+#contact .item_wrap > div:hover a > p {height: auto; visibility: visible; animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both; margin-top: 10px; color: #444;}
 @keyframes text-focus-in {
   0% {
     -webkit-filter: blur(12px);
@@ -546,6 +554,7 @@ a.prev {
     }
     #contact .item_wrap {
         flex-direction: column;
+        row-gap: 30px;
     }
     #contact .item_wrap > div {
         width: 100%;
@@ -555,16 +564,7 @@ a.prev {
     #contact .item_wrap > div.on {
         flex: unset;
     }
-    #contact .item_wrap > div:nth-child(1) {
-        background: unset;
-        padding: 0;
-        height: auto;
-        margin-bottom: 45px;
-    }
-    #contact .item_wrap > div:nth-child(1) span {
-        color: #da291c;
-    }
-    #contact .item_wrap > div:nth-child(1) p {
+    #contact .tit p {
         max-width: unset;
         font-size: 32px;
         font-weight: 700;
@@ -579,9 +579,6 @@ a.prev {
     #contact .item_wrap > div a > span {
         font-size: 16px;
         color: #da291c;
-    }
-    #contact .item_wrap > div:nth-child(2) {
-        margin-bottom: 30px;
     }
 }
 @media all and (max-width: 780px) {
@@ -683,7 +680,7 @@ a.prev {
         font-size: 15px;
         min-width: unset;
     }
-    #contact .item_wrap > div:nth-child(1) p {
+    #contact .tit p {
         font-size: 24px;
     }
     #contact .item_wrap > div a > p {
@@ -739,7 +736,10 @@ a.prev {
         margin-bottom: 20px;
     }
     #contact .sub_visual .wrap h2 {
-        font-size: 28px;
+        font-size: 26px;
+    }
+    #contact .tit {
+        margin-bottom: 40px;
     }
 }
 @media all and (max-width: 350px) {
